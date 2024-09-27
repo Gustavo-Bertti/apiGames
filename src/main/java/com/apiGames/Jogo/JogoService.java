@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.UUID;
 
 @Service
 public class JogoService {
@@ -25,6 +24,9 @@ public class JogoService {
     }
     public Jogo findById(Long id) {
         return jogoRepository.findById(id).orElseThrow(()-> new RuntimeException("Jogo não encontrado"));
+    }
+    public List<Jogo> findByNome(String nome) {
+        return jogoRepository.findByProductByName(nome);
     }
 
     public Jogo updateJogo(Long id, Jogo jogo) {

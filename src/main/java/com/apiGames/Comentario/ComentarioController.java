@@ -1,6 +1,7 @@
 package com.apiGames.Comentario;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,7 +13,8 @@ public class ComentarioController {
 
     final ComentarioService comentarioService;
 
-    ComentarioController(ComentarioService comentarioService) {
+    @Autowired
+    public ComentarioController(ComentarioService comentarioService) {
         this.comentarioService = comentarioService;
     }
 

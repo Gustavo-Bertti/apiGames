@@ -1,6 +1,7 @@
 package com.apiGames.Usuario;
 
 import com.apiGames.Comentario.Dto.ComentarioRequest;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,7 +13,8 @@ public class UsuarioController {
 
     final UsuarioService usuarioService;
 
-    UsuarioController(UsuarioService usuarioService) {
+    @Autowired
+    public UsuarioController(UsuarioService usuarioService) {
         this.usuarioService = usuarioService;
     }
 
